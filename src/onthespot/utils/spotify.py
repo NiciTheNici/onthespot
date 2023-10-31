@@ -276,7 +276,8 @@ def set_music_thumbnail(filename, image_url):
     tags['artwork'] = buf.read()
     tags.save()
     cover_path = Path(filename).parent.joinpath('cover.png') 
-    img.save(cover_path)
+    if not os.path.exists(cover_path):
+        img.save(cover_path)
 
 
 def search_by_term(session,
