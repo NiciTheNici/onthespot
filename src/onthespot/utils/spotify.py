@@ -275,7 +275,7 @@ def set_music_thumbnail(filename, image_url):
     tags = music_tag.load_file(filename)
     tags['artwork'] = buf.read()
     tags.save()
-    cover_path = Path(filename).parent.joinpath('cover.png') 
+    cover_path = Path(filename).parent.joinpath('cover.jpeg') 
     if not os.path.exists(cover_path):
         img.save(cover_path)
 
